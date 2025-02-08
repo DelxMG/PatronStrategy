@@ -26,6 +26,7 @@ public class InterfazUsuarioConsola implements InterfazUsuario {
         for (producto producto : producto.values()) {
             System.out.println(producto.name());
         }
+
         String productoIngresado = scanner.nextLine();
 
         producto productoSeleccionado;
@@ -49,6 +50,7 @@ public class InterfazUsuarioConsola implements InterfazUsuario {
 
 
         IEstrategiasEnvio estrategia = null;
+
         switch (opcion) {
             case 1:
                 estrategia = new EnvioAire();
@@ -67,6 +69,5 @@ public class InterfazUsuarioConsola implements InterfazUsuario {
         Envio envio = new Envio(estrategia, productoIngresado);
         envio.realizarEnvio();
 
-        scanner.close();
     }
 }
