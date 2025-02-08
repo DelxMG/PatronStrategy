@@ -9,7 +9,7 @@ public class InterfazUsuarioConsola implements InterfazUsuario {
 
     private Scanner scanner = new Scanner(System.in);
 
-    private enum producto {
+    private enum PRODUCTO {
         Camiseta,
         Pantalones,
         Zapatillas
@@ -20,18 +20,17 @@ public class InterfazUsuarioConsola implements InterfazUsuario {
     @Override
     public void interactuarUsuario() {
 
-
         System.out.println("Ingrese el nombre del producto que quiere enviar: ");
 
-        for (producto producto : producto.values()) {
+        for (PRODUCTO producto : PRODUCTO.values()) {
             System.out.println(producto.name());
         }
 
         String productoIngresado = scanner.nextLine();
 
-        producto productoSeleccionado;
+        PRODUCTO productoSeleccionado;
         try {
-            productoSeleccionado = producto.valueOf(productoIngresado);
+            productoSeleccionado = PRODUCTO.valueOf(productoIngresado);
             System.out.println("Producto seleccionado: " + productoSeleccionado);
 
         } catch (IllegalArgumentException e) {
